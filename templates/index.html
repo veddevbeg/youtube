@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Downloader</title>
+</head>
+<body>
+    <h1>YouTube Downloader</h1>
+    <form method="POST" action="/">
+        <label for="video_url">Enter the URL of the YouTube video:</label>
+        <input type="text" id="video_url" name="video_url" required><br><br>
+        <label for="download_option">Download Option:</label>
+        <select id="download_option" name="download_option">
+            <option value="video">Video</option>
+            <option value="audio">Audio</option>
+        </select><br><br>
+        <input type="submit" value="Download">
+    </form>
+    
+    {% if download_link %}
+    <p>
+        <a href="{{ url_for('download_file', filename=download_link) }}" download>
+            <button>Download File</button>
+        </a>
+    </p>
+    {% endif %}
+</body>
+</html>
