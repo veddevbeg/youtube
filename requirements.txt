@@ -1,3 +1,3 @@
 Flask==2.1.1
-pytube3==10.0.0
+pytube
 werkzeug==2.0.2
